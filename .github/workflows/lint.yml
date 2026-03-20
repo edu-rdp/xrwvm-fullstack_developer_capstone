@@ -40,5 +40,5 @@ jobs:
         run: npm install jshint --global
       - name: Run Linter
         run: |
-          find ./server/database -name "*.js" -exec jshint {} +
+          find ./server/database -name "node_modules" -prune -o -name "*.js" -print -exec jshint {} +
           echo "Linted all the js files successfully"
